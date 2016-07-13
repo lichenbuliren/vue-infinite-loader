@@ -7,10 +7,12 @@ const domain = 'https://cnodejs.org/api/v1/topics';
 
 export default {
   getList(data, callback) {
-    Vue.resource.get(domain, data).then((response) => {
-      callback(null, response);
+    Vue.http.get(domain, {
+      params: data
+    }).then((response) => {
+      callback(null, response.json());
     }).catch((e) => {
       callback(e);
     });
   }
-}
+};
