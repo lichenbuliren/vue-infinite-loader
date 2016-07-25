@@ -32,6 +32,7 @@
       },
       previous() {
         if (this.page === 1) {
+          console.log('test');
           alert('已经是第一页');
         } else {
           this.page--;
